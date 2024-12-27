@@ -1,0 +1,132 @@
+.partnership-to-llp-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Page Header */
+  .page-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .page-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .page-header p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  /* Information Section */
+  .info-section {
+    margin-bottom: 30px;
+  }
+  
+  .info-section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .info-section p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  /* Slider Section */
+  .slider-section {
+    margin-bottom: 30px;
+  }
+  
+  .slider-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .slider-box {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .slider-box h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .slider-box p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Contact Form Section */
+  .contact-form-section {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .contact-form-section h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  .contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .submit-btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2rem;
+    }
+  
+    .info-section h2,
+    .slider-section h2,
+    .contact-form-section h2 {
+      font-size: 1.5rem;
+    }
+  }
+  

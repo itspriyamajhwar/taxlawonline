@@ -1,0 +1,177 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #004aad;
+  }
+  
+  /* Page Header */
+  .page-header {
+    background-color: #004aad;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .page-header h1 {
+    margin-bottom: 10px;
+  }
+  
+  .page-header p {
+    font-size: 18px;
+  }
+  
+  /* Information Section */
+  .information-section {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .information-section h2 {
+    color: #004aad;
+    margin-bottom: 10px;
+  }
+  
+  /* Service Charges Section */
+  .service-charges-section {
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .service-charges-section h2 {
+    text-align: center;
+    color: #004aad;
+  }
+  
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .grid-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #004aad;
+  }
+  
+  /* FAQ Section */
+  .faq-section {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq-section h2 {
+    text-align: center;
+    color: #004aad;
+  }
+  
+  .faq-container {
+    margin-top: 20px;
+  }
+  
+  .faq-item {
+    margin-bottom: 10px;
+  }
+  
+  .faq-question {
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .faq-answer {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  /* Contact Form Section */
+  .contact-form-section {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-form-section h2 {
+    text-align: center;
+    color: #004aad;
+  }
+  
+  .contact-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .contact-form button {
+    background-color: #004aad;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .contact-form button:hover {
+    background-color: #003580;
+  }
+  
+  
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .service-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .service-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  

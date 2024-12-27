@@ -1,0 +1,109 @@
+.proprietorship-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .page-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .page-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .page-header p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .content-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .content-section.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .text-content {
+    flex: 1;
+    font-size: 1rem;
+    color: #444;
+  }
+  
+  .image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .responsive-img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .topic-banner {
+    text-align: center;
+    background: #f4f4f4;
+    padding: 20px;
+    margin: 30px 0;
+  }
+  
+  .grid-section {
+    margin-bottom: 30px;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .grid-box {
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .grid-box h3 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .client-reviews {
+    margin-bottom: 30px;
+  }
+  
+  .client-reviews h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .best-employee-section {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .employee-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .employee-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  
+  .employee-img:hover {
+    transform: scale(1.1);
+  }
+  

@@ -1,0 +1,51 @@
+
+
+
+.about-section {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+content h1{
+  color:  #333333; /* Dark charcoal gray for authority */
+ 
+}
+.about-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.about-description, .about-mission {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-description, .about-mission {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 1.75rem;
+  }
+
+  .about-description, .about-mission {
+    font-size: 0.9rem;
+  }
+}
+

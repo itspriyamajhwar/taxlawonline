@@ -1,0 +1,162 @@
+/* General Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Page Title */
+.page-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Content Section: Image on left, text on right */
+.content-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.left-image,
+.right-text {
+  flex: 1;
+  margin: 10px;
+}
+
+.section-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.right-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Steps List */
+.steps-section {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.steps-section h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.steps-section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.steps-section li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Reviews Section */
+.reviews-section {
+  margin-bottom: 40px;
+}
+
+.reviews-section h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.review-card {
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.review-text {
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.review-author {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.review-position {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Related Resources Section */
+.resources-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.resources-section li {
+  margin-bottom: 10px;
+}
+
+.resources-section a {
+  font-size: 1rem;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.resources-section a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .content-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-image {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .steps-section,
+  .reviews-section,
+  .resources-section {
+    padding: 15px;
+  }
+
+  .steps-section ul {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.2rem;
+  }
+
+  .review-text,
+  .steps-section li {
+    font-size: 0.9rem;
+  }
+
+  .review-author {
+    font-size: 1rem;
+  }
+}

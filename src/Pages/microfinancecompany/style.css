@@ -1,0 +1,135 @@
+/* src/pages/MicroFinanceCompany.css */
+
+/* General Styles */
+.microfinance-container {
+    background-color: #f7fafc;
+    min-height: 100vh;
+  }
+  
+  /* Banner Styles */
+  .banner {
+    position: relative;
+    background-color: #2b6cb0; /* Blue background */
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .banner-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://via.placeholder.com/1500x500'); /* Replace with your banner image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+  }
+  
+  .banner-content {
+    position: relative;
+    z-index: 10;
+  }
+  
+  .banner-heading {
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  
+  .banner-subheading {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+  }
+  
+  /* Information Section Styles */
+  .info-section {
+    padding: 50px 20px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .info-left, .info-right {
+    font-size: 1rem;
+    color: #4a5568;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Testimonials Section */
+  .testimonials {
+    text-align: center;
+    margin-top: 60px;
+  }
+  
+  .testimonials h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .testimonial {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonial p {
+    font-size: 1.125rem;
+    color: #4a5568;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial p:last-child {
+    text-align: right;
+    font-weight: 600;
+  }
+  
+  /* Responsive Styles */
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .testimonials-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .banner-heading {
+      font-size: 4rem;
+    }
+  
+    .banner-subheading {
+      font-size: 1.5rem;
+    }
+  }
+  

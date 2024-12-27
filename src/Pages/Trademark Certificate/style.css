@@ -1,0 +1,161 @@
+/* General Page Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .trademark-certificate-page {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  /* Banner Section */
+  .banner-section {
+    background: #6c63ff;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 10px;
+  }
+  
+  .banner-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .banner-section p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Gallery Section */
+  .gallery-section {
+    margin: 40px 0;
+  }
+  
+  .gallery-section h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .gallery-item {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .gallery-item p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  /* How to Get Trademark Certificate */
+  .how-to-section {
+    margin: 40px 0;
+  }
+  
+  .how-to-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .how-to-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
+  .how-to-section ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .how-to-section li {
+    margin-bottom: 10px;
+  }
+  
+  /* Contact Us Section */
+  .contact-us-section {
+    margin: 40px 0;
+    text-align: center;
+  }
+  
+  .contact-us-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .contact-us-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .contact-button {
+    display: inline-block;
+    background: #6c63ff;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-button:hover {
+    background: #3c3b91;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .banner-section h1 {
+      font-size: 2rem;
+    }
+  
+    .banner-section p {
+      font-size: 1rem;
+    }
+  
+    .gallery-section h2 {
+      font-size: 1.6rem;
+    }
+  
+    .how-to-section h2 {
+      font-size: 1.6rem;
+    }
+  
+    .contact-us-section h2 {
+      font-size: 1.6rem;
+    }
+  
+    .contact-us-section p {
+      font-size: 1rem;
+    }
+  
+    .contact-button {
+      font-size: 1rem;
+      padding: 12px 25px;
+    }
+  }
+  

@@ -1,0 +1,211 @@
+/* General Container */
+.bookkeeping-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Page Title */
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Service Section */
+.service-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.service-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.service-text .service-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #0073e6;
+}
+
+.service-text .service-description {
+  color: #555;
+}
+
+.service-image {
+  flex: 1;
+  text-align: center;
+}
+
+.service-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional Information Sections */
+.additional-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.info-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.info-text .section-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #0073e6;
+}
+
+.info-text .section-description {
+  color: #555;
+}
+
+.info-image {
+  flex: 1;
+  text-align: center;
+}
+
+.info-image-style {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Reviews Section */
+.reviews-section {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.reviews-slider .review-slide {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.review-text {
+  font-style: italic;
+  color: #333;
+}
+
+.review-author {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #0073e6;
+}
+
+.review-position {
+  color: #555;
+}
+
+/* Contact Form */
+.contact-form {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #0073e6;
+}
+
+.form-submit-btn {
+  background: #0073e6;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-submit-btn:hover {
+  background: #005bb5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-section,
+  .additional-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service-text,
+  .info-text {
+    max-width: 100%;
+  }
+
+  .service-img,
+  .info-image-style {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  .service-text .service-title,
+  .info-text .section-title {
+    font-size: 1.3rem;
+  }
+}

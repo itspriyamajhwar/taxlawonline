@@ -1,0 +1,181 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #004aad;
+  }
+  
+  /* Page Header */
+  .page-header {
+    background-color: #004aad;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .page-header h1 {
+    margin-bottom: 10px;
+  }
+  
+  .page-header p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  /* Sections */
+  section {
+    padding: 20px;
+    margin: 10px 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Intro Section */
+  .intro-section h2 {
+    color: #004aad;
+  }
+  
+  .intro-section p {
+    font-size: 16px;
+  }
+  
+  /* Benefits Section */
+  .benefits-section h2 {
+    color: #004aad;
+  }
+  
+  .benefits-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .benefits-section li {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  /* Eligibility Section */
+  .eligibility-section h2 {
+    color: #004aad;
+  }
+  
+  .eligibility-section ul {
+    list-style: disc;
+    padding-left: 20px;
+  }
+  
+  .eligibility-section li {
+    margin: 8px 0;
+    font-size: 16px;
+  }
+  
+  /* Registration Process Section */
+  .registration-process-section h2 {
+    color: #004aad;
+  }
+  
+  .registration-process-section ol {
+    padding-left: 20px;
+  }
+  
+  .registration-process-section li {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  /* Resources Section */
+  .resources-section h2 {
+    color: #004aad;
+  }
+  
+  .resources-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .resources-section li {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  /* FAQ Section */
+  .faq-section h2 {
+    color: #004aad;
+  }
+  
+  .faq-item {
+    margin-bottom: 15px;
+  }
+  
+  .faq-item strong {
+    font-size: 16px;
+  }
+  
+  /* Footer */
+  .page-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #004aad;
+    color: white;
+    margin-top: 20px;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .page-header h1 {
+      font-size: 28px;
+    }
+  
+    .page-header p {
+      font-size: 16px;
+    }
+  
+    section {
+      padding: 15px;
+    }
+  
+    .benefits-section ul,
+    .eligibility-section ul,
+    .registration-process-section ol,
+    .resources-section ul {
+      padding-left: 15px;
+    }
+  
+    .faq-item {
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .page-header h1 {
+      font-size: 24px;
+    }
+  
+    .intro-section p,
+    .benefits-section li,
+    .eligibility-section li,
+    .registration-process-section li,
+    .resources-section li,
+    .faq-item {
+      font-size: 14px;
+    }
+  
+    .page-footer {
+      font-size: 12px;
+      padding: 10px;
+    }
+  }
+  

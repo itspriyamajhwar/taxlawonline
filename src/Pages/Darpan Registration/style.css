@@ -1,0 +1,212 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #333333; /* Dark background for the page */
+  color: #f0f0f0; /* Light text for contrast */
+}
+
+a {
+  text-decoration: none;
+  color: #ffd700; /* Gold for links */
+}
+
+/* Page Header */
+.page-header {
+  background-color: #333333; /* Matches body background */
+  color: #ffd700; /* Gold text */
+  padding: 20px;
+  text-align: center;
+}
+
+.page-header h1 {
+  margin-bottom: 10px;
+  color: #ffd700; /* Gold heading */
+}
+
+.page-header p {
+  font-size: 18px;
+  color: #e0e0e0; /* Light gray for subtext */
+}
+
+/* Image Grid Section */
+.image-grid-section {
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #444444; /* Slightly lighter section */
+  border-radius: 8px;
+}
+
+.image-grid-section h2 {
+  color: #ffd700; /* Gold heading */
+  text-align: center;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.grid-item {
+  text-align: center;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Darker shadow */
+}
+
+.grid-item p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #f0f0f0; /* Matches light text */
+}
+
+/* Registration Form Section */
+.registration-form-section {
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #444444; /* Matches other sections */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.registration-form-section h2 {
+  color: #ffd700; /* Gold heading */
+  text-align: center;
+}
+
+.registration-form-section p {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #e0e0e0; /* Light gray for subtext */
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-group label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #f0f0f0; /* Light text */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #555555; /* Darker border */
+  border-radius: 5px;
+  background-color: #555555; /* Matches the theme */
+  color: #f0f0f0; /* Light input text */
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: #ffd700; /* Gold button */
+  color: #333333; /* Dark button text */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #e0c400; /* Slightly darker gold */
+}
+
+/* Info Paragraph Section */
+.info-paragraph-section {
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #444444; /* Matches other sections */
+  border-radius: 8px;
+}
+
+.info-paragraph-section h2 {
+  color: #ffd700; /* Gold heading */
+  text-align: center;
+}
+
+.info-paragraph-section p {
+  font-size: 16px;
+  text-align: justify;
+  margin-top: 10px;
+  color: #f0f0f0; /* Light text */
+}
+
+/* Footer */
+.page-footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333333; /* Matches header */
+  color: #ffd700; /* Gold text */
+  margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .registration-form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header h1 {
+    font-size: 24px;
+  }
+
+  .page-header p,
+  .registration-form-section p,
+  .info-paragraph-section p {
+    font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .page-footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+}

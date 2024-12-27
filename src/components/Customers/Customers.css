@@ -1,0 +1,54 @@
+.customers-container {
+  background-color: #000080; /* Navy blue background */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.customers-title {
+  color: #f0f0f0; /* Light gray text for contrast against the navy background */
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.customers-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px; /* Space between logos */
+}
+
+.logo {
+  max-width: 100px; /* Adjust width for responsiveness */
+  max-height: 50px;
+  object-fit: contain;
+  filter: grayscale(100%); /* Subtle styling for logos to match the theme */
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.logo:hover {
+  filter: grayscale(0); /* Show original color on hover for focus */
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+@media (max-width: 768px) {
+  .customers-title {
+      font-size: 1.2rem;
+  }
+
+  .logo {
+      max-width: 80px;
+      max-height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .customers-title {
+      font-size: 1rem;
+  }
+
+  .logo {
+      max-width: 70px;
+      max-height: 35px;
+  }
+}

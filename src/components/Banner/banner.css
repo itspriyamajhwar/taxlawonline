@@ -1,0 +1,97 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333; /* Main header color */
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.image-section {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #333; /* Border matches header for visual balance */
+}
+
+.options-section {
+  flex: 2 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.option {
+  display: flex;
+  align-items: flex-start;
+  padding: 15px;
+  background: #f0f0f0; /* Light gray background for contrast */
+  border: 1px solid #ccc; /* Subtle border for structure */
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.option:hover {
+  background: #f4de6f; /* Medium gray on hover for a modern touch */
+}
+
+.highlighted {
+  background: #eaeaea; /* Light gray highlight */
+  border-color: #666; /* Darker border for emphasis */
+}
+
+.icon {
+  font-size: 2rem;
+  margin-right: 15px;
+  color: #555; /* Matches the header's complementary tones */
+}
+
+.details {
+  flex: 1;
+}
+
+.details h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #333; /* Matches header for consistency */
+}
+
+.details p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: #555; /* Subtle contrast against header color */
+}
+
+@media (max-width: 768px) {
+  .content {
+      flex-direction: column;
+  }
+
+  .options-section {
+      flex: 1 1 100%;
+  }
+
+  .image-section {
+      margin-bottom: 20px;
+  }
+}

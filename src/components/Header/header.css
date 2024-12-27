@@ -1,0 +1,211 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f9fc; /* Light background for a professional look */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Attention Bar */
+.attention-bar {
+    background-color: #ffefe6; /* Light peach for announcements */
+    color: #d70a0a; /* Charcoal gray for contrast */
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.attention-bar strong {
+    margin-right: 5px;
+}
+
+.attention-link {
+    color: #e90303;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000080; /* Navy blue for navbar */
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+}
+
+/* Logo */
+.logo img {
+    height: 40px;
+}
+
+/* Menu Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a {
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 5px;
+}
+
+.nav-links li a:hover {
+    color: #ffa500; /* Soft orange for trust and engagement */
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: #000080; /* Slightly lighter gray for dropdown */
+    border: 1px solid #e5e5e5; /* Subtle border for definition */
+    list-style: none;
+    padding: 10px 0;
+    width: 200px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none;
+
+    /* Add scroll bar and limit height */
+    max-height: 200px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ffa500 #000080;
+}
+
+.dropdown-menu::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background-color: #ffa500;
+    border-radius: 4px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+    background-color: #000080;
+}
+
+.nav-links li:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 8px 15px;
+}
+
+.dropdown-menu li a {
+    color: white;
+    font-size: 14px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #4495e1; /* Slightly darker gray for hover */
+    color: #fff;
+}
+
+/* Login Button */
+.contact {
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact:hover {
+    background-color: white;
+    color: #6b89ee;
+}
+
+/* Hamburger Menu (for mobile) */
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #000080;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* Styling for the logo */
+.logo {
+    text-align: center;
+    margin-top: 1px;
+    margin-bottom: 30px;
+}
+
+.logo img {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Responsive Menu for Small Screens */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .hamburger {
+        display: block;
+        font-size: 24px;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        background-color: #000080;
+        box-shadow: none;
+    }
+
+    .dropdown-menu li a {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact {
+        display: none;
+    }
+}

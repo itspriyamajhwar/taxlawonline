@@ -1,0 +1,145 @@
+/* General Page Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .trademark-search-page {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #6c63ff, #3c3b91);
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero-section p {
+    font-size: 1.2rem;
+  }
+  
+  /* Search Section */
+  .search-section {
+    margin: 40px 0;
+    text-align: center;
+  }
+  
+  .search-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .search-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+  }
+  
+  .search-box input {
+    width: 300px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .search-box button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .search-box button:hover {
+    background: #3c3b91;
+  }
+  
+  .search-result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  /* QA Section */
+  .qa-section {
+    margin: 40px 0;
+  }
+  
+  .qa-section h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .qa-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .qa-item {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .qa-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Info Section */
+  .info-section {
+    margin: 40px 0;
+  }
+  
+  .info-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .info-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* Popup Notification */
+  .popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #6c63ff;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadein 0.5s;
+  }
+  
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

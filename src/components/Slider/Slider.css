@@ -1,0 +1,77 @@
+/* Slider Container */
+.slider-container {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff; /* Matches header color for consistency */
+}
+
+/* Slide Content */
+.slide-content {
+  position: relative;
+  width: 100%;
+}
+
+.slide-content img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  filter: brightness(0.8); /* Darkens the image slightly for better text contrast */
+}
+
+.slide-text {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent dark background */
+  color: #f0f0f0; /* Light gray for text */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for better visibility */
+}
+
+.slide-text h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: #ffd700; /* Gold for heading to add a touch of elegance */
+}
+
+.slide-text p {
+  font-size: 16px;
+  margin: 0;
+  color: #e0e0e0; /* Slightly lighter gray for paragraph text */
+}
+
+/* Swiper Navigation and Pagination */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffd700; /* Gold for navigation buttons */
+}
+
+.swiper-pagination-bullet {
+  background-color: #e0e0e0; /* Light gray for inactive bullets */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ffd700; /* Gold for active bullets */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .slide-text {
+    bottom: 10%;
+    left: 5%;
+    padding: 10px;
+    max-width: 300px;
+  }
+
+  .slide-text h2 {
+    font-size: 18px;
+  }
+
+  .slide-text p {
+    font-size: 14px;
+  }
+}

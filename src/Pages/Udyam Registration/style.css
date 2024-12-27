@@ -1,0 +1,151 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Page Header */
+  .page-header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .page-header h1 {
+    margin-bottom: 10px;
+  }
+  
+  .page-header p {
+    font-size: 18px;
+  }
+  
+  /* Information Section */
+  .information-section {
+    padding: 20px;
+    background-color: white;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .information-section h2 {
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .information-section p {
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: justify;
+  }
+  
+  /* Image Grid Section */
+  .image-grid-section {
+    padding: 20px;
+  }
+  
+  .image-grid-section h2 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+  }
+  
+  .image-box {
+    text-align: center;
+  }
+  
+  .image-box img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .image-box p {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  /* Registration Form Section */
+  .registration-form-section {
+    padding: 20px;
+  }
+  
+  .registration-form-section h2 {
+    color: #007bff;
+    text-align: center;
+  }
+  
+  .registration-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .submit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  
+ 
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .information-section {
+      padding: 15px;
+    }
+  
+    .image-grid {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+  
+    .registration-form {
+      padding: 15px;
+    }
+  }
+  

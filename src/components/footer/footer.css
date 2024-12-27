@@ -1,0 +1,154 @@
+/* Footer General Styling */
+.footer {
+  background-color: #000080; /* Navy blue for footer background */
+  color: #e0e0e0; /* Light gray text for readability */
+  padding: 20px 10px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 200px; /* Adjust size as needed */
+  height: auto;
+}
+
+/* Footer Styles */
+.footer {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Chatbot Styles */
+.chatbot-icon {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.chatbot-container {
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+  width: 350px;
+  background-color: #444444; /* Dark gray for subtle contrast */
+  color: #ffffff;
+  border: 1px solid #555555; /* Slightly lighter border for definition */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+}
+
+.chatbot-header {
+  background-color: #555555; /* Medium gray for chatbot header */
+  color: #e0e0e0; /* Light gray text */
+  padding: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.chatbot-messages {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #333333; /* Match footer background for a seamless look */
+}
+
+.chatbot-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #555555; /* Border matches chatbot theme */
+}
+
+/* Company Info */
+.company-info {
+  flex: 1;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.company-info .logo {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.company-info .company-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f0f0f0; /* Slightly lighter text for emphasis */
+}
+
+/* Navigation */
+.navigation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.navigation a {
+  color: #e0e0e0; /* Light gray for text */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.navigation a:hover {
+  text-decoration: underline;
+  color: #fab106; /* Light green for hover interaction */
+}
+
+/* Legal Section */
+.legal {
+  flex: 1;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+
+.legal a {
+  color: #e0e0e0; /* Matches footer text */
+  text-decoration: underline;
+}
+
+.legal a:hover {
+  color: #fab106; /* Light green hover effect for links */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navigation {
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .company-info .logo {
+    width: 120px;
+  }
+
+  .navigation a {
+    font-size: 0.9rem;
+  }
+
+  .legal {
+    font-size: 0.8rem;
+  }
+}
