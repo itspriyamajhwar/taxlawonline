@@ -123,6 +123,7 @@ body {
   }
 }
 
+
 @media (max-width: 480px) {
   .page-title {
     font-size: 1.5rem;
@@ -139,5 +140,94 @@ body {
 
   .section-description {
     font-size: 0.85rem;
+  }
+}
+/* FAQ Styles */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  cursor: move;
+  transition: transform 0.3s ease;
+}
+
+.faq-item:active {
+  transform: scale(0.98);
+}
+
+.faq-question {
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.faq-answer {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+/* Pricing Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 20px;
+  padding: 20px;
+}
+
+.pricing-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  background-color: #73c0f4;
+  color: white;
+}
+
+.pricing-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.pricing-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.pricing-price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #e74c3c;
+  margin-bottom: 15px;
+}
+
+.pricing-features {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1rem;
+  color: #34495e;
+}
+
+.pricing-features li {
+  margin-bottom: 10px;
+}
+
+/* Make the grid responsive */
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr; /* Stack cards on small screens */
   }
 }

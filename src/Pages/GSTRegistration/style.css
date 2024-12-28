@@ -1,0 +1,113 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    box-sizing: border-box;
+  }
+  
+  .gst-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Information Section */
+  .gst-info {
+    flex: 1;
+    min-width: 300px;
+    margin-right: 20px;
+  }
+  
+  .gst-info h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #1a73e8;
+  }
+  
+  .gst-info p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .gst-info h3 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .gst-info ul {
+    list-style: disc;
+    padding-left: 20px;
+  }
+  
+  .gst-info ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Form Section */
+  .gst-form {
+    flex: 1;
+    max-width: 400px;
+    min-width: 300px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .gst-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #1a73e8;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form input,
+  form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  form textarea {
+    resize: vertical;
+  }
+  
+  form button {
+    padding: 10px;
+    background: #1a73e8;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background: #155ab8;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .gst-container {
+      flex-direction: column;
+    }
+  
+    .gst-info,
+    .gst-form {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+  

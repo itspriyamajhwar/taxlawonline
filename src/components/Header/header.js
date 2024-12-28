@@ -111,9 +111,29 @@ const Header = () => {
                             </ul>
                         )}
                     </li>
+                      {/* GST Dropdown */}
+                                        <li>
+                                            <a href="#gst" onClick={() => toggleDropdown('gst')} aria-expanded={activeDropdown === 'gst'}>
+                                                GST ▼
+                                            </a>
+                                            {activeDropdown === 'gst' && (
+                                                <ul className="dropdown-menu gst-menu">
+                                                    <li className="dropdown-section">
+                                                        <h4>Composite /Regular GST Dealer</h4>
+                                                        <ul>
+                                                            <li><Link to="/composite-gst-registration" onClick={closeMenu}>GST Registration</Link></li>
+                                                            <li><Link to="/composite-gst-return" onClick={closeMenu}>GST Return</Link></li>
+                                                            <li><Link to="/composite-gst-annual-return" onClick={closeMenu}>GST Annual Return</Link></li>
+                                                            <li><Link to="/gst" onClick={closeMenu}>Other</Link></li>
+                                                        </ul>
+                                                   
+                                                    </li>
+                                                </ul>
+                                            )}
+                                        </li>
 
                     <li><Link to="/bookkeeping" onClick={closeMenu}>Book Keeping</Link></li>
-                    <li><Link to="/gst" onClick={closeMenu}>GST</Link></li>
+                  
                     <li><Link to="/incometax" onClick={closeMenu}>Income Tax</Link></li>
                 </ul>
 

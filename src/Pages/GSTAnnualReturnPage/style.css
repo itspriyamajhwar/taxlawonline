@@ -1,0 +1,197 @@
+/* General Container */
+.gst-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main Heading */
+.gst-info h1 {
+  font-size: 3rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.gst-info p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Benefits List */
+.gst-info ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.gst-info ul li {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* GST Dealer Info Section */
+.gst-dealer-info {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.gst-dealer-info h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.dealer-cards {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.dealer-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  width: 48%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dealer-card h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.dealer-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.dealer-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dealer-card ul li {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+/* GST Dealer Type Selection */
+.dealer-type-selection {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.dealer-type-selection label {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.dealer-type-selection input {
+  margin-right: 10px;
+}
+
+/* Registration Form Section */
+.gst-form {
+  background-color: #fff;
+  padding: 30px;
+  margin-top: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+.gst-form h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.gst-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gst-form input,
+.gst-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gst-form button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.gst-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .gst-info h1 {
+    font-size: 2.5rem;
+  }
+
+  .gst-dealer-info h2 {
+    font-size: 1.75rem;
+  }
+
+  .dealer-cards {
+    flex-direction: column;
+  }
+
+  .dealer-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .gst-form input,
+  .gst-form textarea {
+    font-size: 14px;
+  }
+
+  .gst-form button {
+    font-size: 14px;
+  }
+}

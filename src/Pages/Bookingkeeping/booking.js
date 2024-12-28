@@ -1,4 +1,3 @@
-// src/pages/BookKeeping.js
 import React, { useState } from 'react';
 import Slider from 'react-slick'; // Importing the slider component
 import './style.css'; // Import the CSS file
@@ -68,7 +67,7 @@ function BookKeeping() {
           </p>
         </div>
       </div>
-      
+
       {/* Additional Information Section 1 */}
       <div className="additional-info">
         <div className="info-text">
@@ -103,6 +102,57 @@ function BookKeeping() {
         </div>
       </div>
 
+      {/* Service 3: Accounting (Tally, Busy, Zoho) */}
+      <div className="service-section">
+        <div className="service-text">
+          <h2 className="service-title">Accounting (Tally, Busy, Zoho)</h2>
+          <p className="service-description">
+            We offer comprehensive accounting services using popular accounting software like Tally, Busy, and Zoho. These tools provide detailed financial insights, simplified management of accounts, and integration with other systems, helping businesses manage their finances efficiently.
+          </p>
+        </div>
+        <div className="service-image">
+          <img
+            src="https://th.bing.com/th/id/OIP.JEPYhbasR9rN5DYEAKuPIQHaE3?rs=1&pid=ImgDetMain"
+            alt="Accounting Tools"
+            className="service-img"
+          />
+        </div>
+      </div>
+
+      {/* Service 4: Foreign Accounting (Xero, QuickBooks) */}
+      <div className="service-section">
+        <div className="service-image">
+          <img
+            src="https://5.imimg.com/data5/SELLER/Default/2024/5/416808705/LT/EO/QR/67189188/accounting-tally-quickbooks-zoho-books-500x500.jpg"
+            alt="Foreign Accounting"
+            className="service-img"
+          />
+        </div>
+        <div className="service-text">
+          <h2 className="service-title">Foreign Accounting (Xero, QuickBooks)</h2>
+          <p className="service-description">
+            We specialize in foreign accounting services, offering expertise in software like Xero and QuickBooks to help manage international accounts. Our services ensure seamless management of multi-currency transactions, taxes, and reports, making it easier for global businesses to stay compliant.
+          </p>
+        </div>
+      </div>
+
+      {/* Service 5: Payroll Services */}
+      <div className="service-section">
+        <div className="service-text">
+          <h2 className="service-title">Payroll Services</h2>
+          <p className="service-description">
+            Our payroll services handle all aspects of employee compensation, including calculating salaries, deductions, benefits, and tax filing. We use advanced payroll systems to ensure accuracy and timely processing, helping businesses comply with labor laws and maintain employee satisfaction.
+          </p>
+        </div>
+        <div className="service-image">
+          <img
+            src="https://th.bing.com/th/id/OIP.t1b7juqIl_UoQX9-oTKhJwHaFS?rs=1&pid=ImgDetMain"
+            alt="Payroll Services"
+            className="service-img"
+          />
+        </div>
+      </div>
+
       {/* Customer Reviews Slider */}
       <div className="reviews-section">
         <h2 className="section-title">What Our Clients Say</h2>
@@ -130,7 +180,6 @@ function BookKeeping() {
           </div>
         </Slider>
       </div>
-
 
       {/* Contact Form */}
       <div className="contact-form">

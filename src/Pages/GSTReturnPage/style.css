@@ -1,0 +1,178 @@
+/* General Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f6f9;
+}
+
+/* Main Heading */
+.heading {
+  font-size: 2.2rem; /* Reduced size */
+  color: #2d3e50;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Introduction Section */
+.intro-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px; /* Reduced gap */
+  margin-bottom: 25px; /* Reduced margin */
+}
+
+.intro-text {
+  font-size: 1rem; /* Reduced size */
+  color: #7a8a9d;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.intro-image {
+  max-width: 180px; /* Slightly smaller image */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+.form {
+  background: #ffffff;
+  padding: 20px; /* Reduced padding */
+  border-radius: 6px; /* Smaller border radius */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px; /* Reduced gap */
+  flex-wrap: wrap;
+  margin-bottom: 15px; /* Reduced margin */
+}
+
+.form-field {
+  flex: 1;
+  min-width: 230px; /* Reduced width */
+}
+
+.input {
+  width: 100%;
+  padding: 10px; /* Reduced padding */
+  margin-top: 6px; /* Reduced top margin */
+  font-size: 0.95rem; /* Reduced font size */
+  border: 1px solid #ccd1d9;
+  border-radius: 5px; /* Smaller radius */
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.input:focus {
+  border-color: #4e9cff;
+  outline: none;
+}
+
+.label {
+  font-size: 0.95rem; /* Reduced label size */
+  color: #333;
+  margin-bottom: 4px; /* Reduced margin */
+  font-weight: 500;
+}
+
+.submit-button {
+  background-color:#4e9cff;
+  color: white;
+  padding: 10px 18px; /* Reduced padding */
+  border: none;
+  border-radius: 5px; /* Smaller border radius */
+  cursor: pointer;
+  font-size: 1rem; /* Slightly smaller font size */
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+  background-color: #4e9cff;
+}
+
+/* Dealer Information Section */
+.dealer-info {
+  background-color: #f9fafb;
+  padding: 15px; /* Reduced padding */
+  border-radius: 6px;
+  margin-top: 30px; /* Reduced margin */
+}
+
+.dealer-info h2 {
+  font-size: 1.6rem; /* Reduced size */
+  color: #333;
+  margin-bottom: 15px; /* Reduced margin */
+}
+
+/* Dealer Benefits Section */
+.dealer-benefits {
+  background-color: #ffffff;
+  padding: 15px; /* Reduced padding */
+  margin-top: 25px; /* Reduced margin */
+  border-radius: 6px; /* Smaller radius */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.dealer-benefits h3 {
+  font-size: 1.4rem; /* Reduced font size */
+  color: #333;
+}
+
+.dealer-benefits ul {
+  margin-top: 8px; /* Reduced margin */
+  padding-left: 18px; /* Reduced padding */
+}
+
+.dealer-benefits li {
+  font-size: 1rem; /* Reduced font size */
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Footer Text */
+.footer-text {
+  font-size: 0.95rem; /* Reduced font size */
+  color: #7a8a9d;
+  text-align: center;
+  margin-top: 15px; /* Reduced margin */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .intro-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .intro-image {
+    max-width: 100%;
+    margin-top: 15px;
+  }
+
+  .heading {
+    font-size: 1.8rem; /* Reduced heading size */
+  }
+
+  .form-group {
+    flex-direction: column;
+    gap: 12px; /* Reduced gap */
+  }
+
+  .form-field {
+    width: 100%;
+  }
+
+  .submit-button {
+    font-size: 0.95rem; /* Reduced font size */
+  }
+}

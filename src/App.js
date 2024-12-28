@@ -51,7 +51,14 @@ import  McaServices from "./Pages/MCA Services/MCA Services";
 import ServiceDetail from "./Pages/ServiceDetail/ServiceDetail";
 import Contact from "./Pages/contact/contact";
 import About from "./Pages/Aboutus/aboutus";
-
+import  BlogPage from "./Pages/blog/blog"
+import GSTRegistration from './Pages/GSTRegistration/GSTRegistration';
+import GSTReturnPage from "./Pages/GSTReturnPage/GSTReturnPage";
+import GSTAnnualReturnPage from "./Pages/GSTAnnualReturnPage/GSTAnnualReturnPage";
+import  FAQPage from "./Pages/FQA/fqa";
+import PrivacyPolicy from "./Pages/Privacy Policy/Privacy Policy"; 
+import TermsAndService from "./Pages/privacytermservice/termandservices";
+import Disclaime from "./Pages/Disclaimer/Disclaimer";
 const App = () => {
   return (
     <Router>
@@ -120,12 +127,21 @@ const App = () => {
 
         {/*gst*/}
         <Route path="/gst" element={< GST />} />
+        <Route path="/composite-gst-registration" element={<GSTRegistration/>} />
+        <Route path="/composite-gst-return" element={<GSTReturnPage/>}/>
+        <Route path="/composite-gst-annual-return" element={< GSTAnnualReturnPage/>}/>
         {/*booking*/}
         <Route path="/bookkeeping" element={< BookKeeping />} />
         {/*contact*/}
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/about" element={<About/>} />
-       
+      <Route path="/blog" element={< BlogPage/>}/>
+      <Route path="/fqa" element={< FAQPage/>}/>
+      <Route path="/privacy-policy"  element={<PrivacyPolicy/>}/>
+      <Route path="/terms-of-service" element={< TermsAndService/>}/>
+      <Route path="/disclaimer" element={<Disclaime/>}/>
+  
+
       </Routes>
       <Footer />
       < Chatbot/>

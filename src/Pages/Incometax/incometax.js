@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css'; // For styling
 
 function IncomeTax() {
@@ -48,6 +48,60 @@ function IncomeTax() {
     },
   ];
 
+  // FAQ Section Data
+  const faqItems = [
+    { question: "What is TDS?", answer: "TDS stands for Tax Deducted at Source, a method of income tax collection." },
+    { question: "How to file 15 CA and 15 CB?", answer: "We guide you step by step in filing 15 CA and 15 CB for foreign payments." },
+    { question: "What is ITR for salary?", answer: "ITR for salary helps you file taxes based on your salary income." },
+    { question: "What are Capital Gains?", answer: "Capital gains refer to the profit from the sale of assets or investments." },
+    { question: "How to file ITR for rental income?", answer: "We help you file ITR for rental income while ensuring deductions." },
+    { question: "What to do if you get an Income Tax Notice?", answer: "Our experts assist in handling tax notices to ensure compliance." },
+  ];
+
+  // State for FAQ drag-and-drop
+  const [faqList, setFaqList] = useState(faqItems);
+
+  // Handle drag start
+  const handleDragStart = (e, index) => {
+    e.dataTransfer.setData('draggedItem', index);
+  };
+
+  // Handle drag over
+  const handleDragOver = (e) => {
+    e.preventDefault(); // Allow drop
+  };
+
+  // Handle drop and reorder
+  const handleDrop = (e, index) => {
+    const draggedIndex = e.dataTransfer.getData('draggedItem');
+    const updatedFaqList = [...faqList];
+    const [draggedItem] = updatedFaqList.splice(draggedIndex, 1);
+    updatedFaqList.splice(index, 0, draggedItem);
+    setFaqList(updatedFaqList);
+  };
+
+  // Pricing Plans Data
+  const pricingPlans = [
+    {
+      name: 'Basic',
+      description: 'Standard income tax filing services with essential features.',
+      price: 'Rs. 499/-',
+      features: ['TDS Return', 'ITR for Salary', 'Basic Assistance'],
+    },
+    {
+      name: 'Standard',
+      description: 'Intermediate services with added features and support.',
+      price: 'Rs. 1299/-',
+      features: ['TDS Return', 'ITR for Salary', 'ITR for Rent', 'Basic Assistance'],
+    },
+    {
+      name: 'Premium',
+      description: 'Comprehensive services with personalized assistance and priority support.',
+      price: 'Rs. 1499/-',
+      features: ['All Standard Features', 'ITR for Capital Gains', 'Income Tax Notice Handling'],
+    },
+  ];
+
   return (
     <div className="income-tax-container">
       <h1 className="page-title">Our Income Tax Services</h1>
@@ -69,6 +123,22 @@ function IncomeTax() {
         ))}
       </div>
 
+      {/* Pricing Plans Grid */}
+      <div className="pricing-grid">
+        {pricingPlans.map((plan, index) => (
+          <div className="pricing-card" key={index}>
+            <h3 className="pricing-title">{plan.name}</h3>
+            <p className="pricing-description">{plan.description}</p>
+            <p className="pricing-price">{plan.price}</p>
+            <ul className="pricing-features">
+              {plan.features.map((feature, i) => (
+                <li key={i}>{feature}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
       {/* Section for Details */}
       <div className="info-section">
         <div className="info-text">
@@ -84,6 +154,24 @@ function IncomeTax() {
             className="info-image-style"
           />
         </div>
+      </div>
+
+      {/* FAQ Section */}
+      <h2 className="section-title">Frequently Asked Questions</h2>
+      <div className="faq-list">
+        {faqList.map((item, index) => (
+          <div
+            key={index}
+            className="faq-item"
+            draggable
+            onDragStart={(e) => handleDragStart(e, index)}
+            onDragOver={handleDragOver}
+            onDrop={(e) => handleDrop(e, index)}
+          >
+            <h3 className="faq-question">{item.question}</h3>
+            <p className="faq-answer">{item.answer}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

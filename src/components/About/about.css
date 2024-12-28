@@ -12,9 +12,9 @@
   margin: 0 auto;
   padding: 0 1rem;
 }
-content h1{
-  color:  #333333; /* Dark charcoal gray for authority */
- 
+
+.content h2{
+  color: #2c3e50;
 }
 .about-title {
   font-size: 2.5rem;
