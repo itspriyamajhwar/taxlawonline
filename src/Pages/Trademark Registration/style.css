@@ -3,7 +3,7 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-color: #f9f9f9;
-    color: #333;
+    color: #141212;
   }
   
   .trademark-registration-page {
@@ -14,7 +14,7 @@ body {
   
   /* Hero Section */
   .hero-section {
-    background: linear-gradient(135deg, #007bff, #0056b3);
+    background: linear-gradient(135deg, #617d99, #6884a0);
     color: white;
     text-align: center;
     padding: 60px 20px;
@@ -87,6 +87,7 @@ body {
   .text-content p {
     font-size: 1rem;
     line-height: 1.6;
+    color: #141212;
   }
   
   .image-content img {
@@ -97,7 +98,8 @@ body {
   
   /* Grid Section */
   .grid-section {
-    background: #f4f4f4;
+    background: #615e5e;
+    color: #141212;
     padding: 40px 20px;
     border-radius: 10px;
     margin: 40px 0;
@@ -121,6 +123,9 @@ body {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .grid-item p {
+    color: black;
   }
   
   .grid-item h3 {
