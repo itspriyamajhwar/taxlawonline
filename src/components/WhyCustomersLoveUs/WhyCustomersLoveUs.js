@@ -1,5 +1,6 @@
 import React from "react";
 import "./WhyCustomersLoveUs.css";
+import logo from '../../assect/2.png'
 
 const WhyCustomersLoveUs = () => {
   return (
@@ -15,7 +16,7 @@ const WhyCustomersLoveUs = () => {
           <div className="stat-circle">1 lakh+ TM Registered</div>
         </div>
         <div className="logo">
-          <img src="/images/logo.png" alt="Company Logo" />
+         <img src={logo} alt="Company Logo" />
         </div>
       </div>
       <div className="features-container">

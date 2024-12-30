@@ -59,6 +59,8 @@ import  FAQPage from "./Pages/FQA/fqa";
 import PrivacyPolicy from "./Pages/Privacy Policy/Privacy Policy"; 
 import TermsAndService from "./Pages/privacytermservice/termandservices";
 import Disclaime from "./Pages/Disclaimer/Disclaimer";
+import  NewsPage from "./Pages/News/news";
+import PressReleasePage from "./Pages/PressRelease/PressRelease";
 const App = () => {
   return (
     <Router>
@@ -140,6 +142,8 @@ const App = () => {
       <Route path="/privacy-policy"  element={<PrivacyPolicy/>}/>
       <Route path="/terms-of-service" element={< TermsAndService/>}/>
       <Route path="/disclaimer" element={<Disclaime/>}/>
+      <Route path="/news" element={< NewsPage/>}/>
+      <Route path="/press-release" element={<PressReleasePage/>}/>
   
 
       </Routes>
@@ -148,5 +152,6 @@ const App = () => {
     </Router>
   );
 };
+
 
 export default App;

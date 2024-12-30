@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './header.css';
-import logo from '../../assect/taxlaw.png'; // Adjust the relative path as per your folder structure
+import logo from '../../assect/1-removebg-preview (1).png'; // Adjust the relative path as per your folder structure
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false); // For the mobile hamburger menu

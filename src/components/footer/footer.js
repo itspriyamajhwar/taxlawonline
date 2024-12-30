@@ -1,6 +1,6 @@
 import React from 'react';
 import './footer.css';
-import logo from '../../assect/taxlaw.png'; // Import the image
+import logo from '../../assect/1-removebg-preview (1).png'; // Import the image
 
 const Footer = () => {
   return (

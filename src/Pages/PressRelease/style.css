@@ -1,0 +1,94 @@
+/* style.css */
+
+/* General layout */
+.news-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .news-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  /* Loading state */
+  .news-loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+  }
+  
+  /* Error state */
+  .news-error {
+    text-align: center;
+    font-size: 1.2rem;
+    color: red;
+    font-weight: bold;
+  }
+  
+  /* Press release list */
+  .news-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .news-item {
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .news-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .news-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+  }
+  
+  .news-description {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .news-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .news-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .news-heading {
+      font-size: 1.5rem;
+    }
+  
+    .news-item {
+      padding: 12px;
+    }
+  
+    .news-title {
+      font-size: 1.25rem;
+    }
+  
+    .news-description {
+      font-size: 0.9rem;
+    }
+  }
+  
