@@ -1,0 +1,98 @@
+/* Base container */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Page Title */
+  .page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Section Titles */
+  .section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  /* Section Text */
+  .section-text {
+    font-size: 1rem;
+    color: #4a4a4a;
+    line-height: 1.6;
+  }
+  
+  /* Steps and Documents Lists */
+  .steps-list,
+  .documents-list {
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 1rem;
+    color: #4a4a4a;
+  }
+  
+  .steps-list li,
+  .documents-list li {
+    margin-bottom: 10px;
+  }
+  
+  /* Section Spacing */
+  .content-section,
+  .steps-section,
+  .legal-documents-section,
+  .closing-section {
+    margin-bottom: 40px;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    /* Adjust page title font size */
+    .page-title {
+      font-size: 2rem;
+    }
+  
+    /* Adjust section title font size */
+    .section-title {
+      font-size: 1.5rem;
+    }
+  
+    /* Adjust section text font size */
+    .section-text {
+      font-size: 0.9rem;
+    }
+  
+    /* Adjust list font size */
+    .steps-list li,
+    .documents-list li {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Further adjust page title for small screens */
+    .page-title {
+      font-size: 1.5rem;
+    }
+  
+    /* Further adjust section title font size */
+    .section-title {
+      font-size: 1.25rem;
+    }
+  
+    /* Further adjust section text font size */
+    .section-text {
+      font-size: 0.8rem;
+    }
+  
+    /* Further adjust list font size */
+    .steps-list li,
+    .documents-list li {
+      font-size: 0.8rem;
+    }
+  }
+  
