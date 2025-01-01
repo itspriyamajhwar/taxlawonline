@@ -19,8 +19,11 @@ const GSTRegistration = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const serverUrl = window.location.hostname === 'localhost' 
+      ? 'http://localhost:3000/submit-gst-registration' 
+      : 'https://backend-one-snowy-88.vercel.app/submit-gst-registration';
     try {
-      const response = await axios.post('http://localhost:3000/submit-gst-registration', {
+      const response = await axios.post(serverUrl, {
         fullName,
         email,
         mobileNumber,

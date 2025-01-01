@@ -11,8 +11,11 @@ const TrustRegistration = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const serverUrl = window.location.hostname === 'localhost' 
+      ? 'http://localhost:3000/submit-trust-registration' 
+      : 'https://backend-one-snowy-88.vercel.app/submit-trust-registration';
     try {
-      const response = await axios.post('http://localhost:3000/submit-trust-registration', {
+      const response = await axios.post(serverUrl, {
         trustName,
         trustType,
         trustees,

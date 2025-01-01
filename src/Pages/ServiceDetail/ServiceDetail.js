@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './style.css';
+import axios from 'axios'; // Import axios for making HTTP requests
 
 const ServiceDetail = () => {
   const { id } = useParams();  // Getting the service id from the URL
@@ -176,9 +177,25 @@ const ServiceDetail = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted', formData);
+    const serverUrl = window.location.hostname === 'localhost' 
+      ? 'http://localhost:3000/submit-service-detail' 
+      : 'https://backend-one-snowy-88.vercel.app/submit-service-detail';
+    try {
+      const response = await axios.post(serverUrl, formData);
+      console.log('Form Submitted', response.data);
+      setSuccessMessage('Form submitted successfully! Our team will contact you soon. Thank you!');
+      // Clear the form fields
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form', error);
+    }
   };
 
   return (

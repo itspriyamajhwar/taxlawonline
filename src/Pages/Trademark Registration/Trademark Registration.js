@@ -10,8 +10,11 @@ const TrademarkRegistration = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const serverUrl = window.location.hostname === 'localhost' 
+      ? 'http://localhost:3000/submit-trademark-registration' 
+      : 'https://backend-one-snowy-88.vercel.app/submit-trademark-registration';
     try {
-      const response = await axios.post('http://localhost:3000/submit-trademark-registration', {
+      const response = await axios.post(serverUrl, {
         name,
         email,
         message
