@@ -1,8 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "./style.css"; // Import your CSS file
+import axios from 'axios'; // Import axios for making HTTP requests
 
 const PartnershipFirmToLLP = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState(''); // State for success message
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3000/submit-partnership-to-llp', {
+        name,
+        email,
+        phone,
+        message
+      });
+      console.log('Form Submitted', response.data);
+      setSuccessMessage('Form submitted successfully! Our team will contact you soon. Thank you!');
+      // Clear the form fields
+      setName('');
+      setEmail('');
+      setPhone('');
+      setMessage('');
+    } catch (error) {
+      console.error('Error submitting form', error);
+    }
+  };
+
   // Slider settings for key benefits
   const sliderSettings = {
     dots: true,
@@ -81,18 +109,39 @@ const PartnershipFirmToLLP = () => {
       {/* Contact Form */}
       <section className="contact-form-section">
         <h2>Contact Us for Assistance</h2>
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Your Name</label>
-            <input type="text" id="name" placeholder="Enter your name" />
+            <input
+              type="text"
+              id="name"
+              placeholder="Enter your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
           </div>
           <div className="form-group">
             <label htmlFor="email">Your Email</label>
-            <input type="email" id="email" placeholder="Enter your email" />
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </div>
           <div className="form-group">
             <label htmlFor="phone">Phone Number</label>
-            <input type="text" id="phone" placeholder="Enter your phone number" />
+            <input
+              type="text"
+              id="phone"
+              placeholder="Enter your phone number"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              required
+            />
           </div>
           <div className="form-group">
             <label htmlFor="message">Message</label>
@@ -100,12 +149,20 @@ const PartnershipFirmToLLP = () => {
               id="message"
               placeholder="Write your message"
               rows="4"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
             ></textarea>
           </div>
           <button type="submit" className="submit-btn">
             Submit
           </button>
         </form>
+        {successMessage && (
+          <p className="success-message" style={{ color: 'red', fontWeight: 'bold', fontSize: '24px', animation: 'flash 1s infinite' }}>
+            {successMessage}
+          </p>
+        )} {/* Display success message */}
       </section>
     </div>
   );

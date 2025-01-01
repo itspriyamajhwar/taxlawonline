@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
+import axios from 'axios'; // Import axios for making HTTP requests
 
 const TrademarkRegistration = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState(''); // State for success message
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3000/submit-trademark-registration', {
+        name,
+        email,
+        message
+      });
+      console.log('Form Submitted', response.data);
+      setSuccessMessage('Form submitted successfully! Our team will contact you soon. Thank you!');
+      // Clear the form fields
+      setName('');
+      setEmail('');
+      setMessage('');
+    } catch (error) {
+      console.error('Error submitting form', error);
+    }
+  };
+
   return (
     <div className="trademark-registration-page">
       {/* Hero Section */}
@@ -13,8 +38,6 @@ const TrademarkRegistration = () => {
           your logo, name, or design.
         </p>
       </section>
-
-     
 
       {/* Details Section */}
       <section className="details-section">
@@ -100,21 +123,43 @@ const TrademarkRegistration = () => {
       {/* Contact Form */}
       <section className="contact-section">
         <h2>Get in Touch</h2>
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
           <label>
             Name:
-            <input type="text" placeholder="Enter your name" />
+            <input
+              type="text"
+              placeholder="Enter your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
           </label>
           <label>
             Email:
-            <input type="email" placeholder="Enter your email" />
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </label>
           <label>
             Message:
-            <textarea placeholder="Enter your message"></textarea>
+            <textarea
+              placeholder="Enter your message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+            ></textarea>
           </label>
           <button type="submit">Submit</button>
         </form>
+        {successMessage && (
+          <p className="success-message" style={{ color: 'red', fontWeight: 'bold', fontSize: '24px', animation: 'flash 1s infinite' }}>
+            {successMessage}
+          </p>
+        )} {/* Display success message */}
       </section>
     </div>
   );

@@ -1,7 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
+import axios from 'axios'; // Import axios for making HTTP requests
 
 const ESIRegistration = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [successMessage, setSuccessMessage] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3000/submit-esi-registration', formData);
+      console.log('Form Submitted', response.data);
+      setSuccessMessage('Form submitted successfully! Our team will contact you soon. Thank you!');
+      // Clear form fields
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form', error);
+    }
+  };
+
   return (
     <div className="esi-registration-page">
       {/* Banner Section */}
@@ -53,28 +85,27 @@ const ESIRegistration = () => {
       {/* Contact Form */}
       <section className="contact-form-section">
         <h2>Contact Us for ESI Registration</h2>
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
           <label>
             Name:
-            <input type="text" placeholder="Enter your full name" required />
+            <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Enter your full name" required />
           </label>
           <label>
             Email:
-            <input type="email" placeholder="Enter your email" required />
+            <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Enter your email" required />
           </label>
           <label>
             Phone:
-            <input type="tel" placeholder="Enter your phone number" required />
+            <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Enter your phone number" required />
           </label>
           <label>
             Message:
-            <textarea placeholder="How can we help you?" rows="4"></textarea>
+            <textarea name="message" value={formData.message} onChange={handleChange} placeholder="How can we help you?" rows="4"></textarea>
           </label>
           <button type="submit">Submit</button>
         </form>
+        {successMessage && <p className="success-message">{successMessage}</p>}
       </section>
-
-      
     </div>
   );
 };

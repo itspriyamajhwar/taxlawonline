@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
+import axios from 'axios'; // Import axios for making HTTP requests
 
 const GSTReturnPage = () => {
   const [gstNumber, setGstNumber] = useState('');
@@ -10,10 +11,35 @@ const GSTReturnPage = () => {
   const [dealerName, setDealerName] = useState('');
   const [dealerGstNumber, setDealerGstNumber] = useState('');
   const [dealerType, setDealerType] = useState('regular'); // regular or composite
+  const [successMessage, setSuccessMessage] = useState(''); // State for success message
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Submitted', { gstNumber, businessName, turnover, taxPaid, filedDate, dealerName, dealerGstNumber, dealerType });
+    try {
+      const response = await axios.post('http://localhost:3000/submit-gst-return', {
+        gstNumber,
+        businessName,
+        turnover,
+        taxPaid,
+        filedDate,
+        dealerName,
+        dealerGstNumber,
+        dealerType
+      });
+      console.log('Form Submitted', response.data);
+      setSuccessMessage('Form submitted successfully! Our team will contact you soon. Thank you!');
+      // Clear the form fields
+      setGstNumber('');
+      setBusinessName('');
+      setTurnover('');
+      setTaxPaid('');
+      setFiledDate('');
+      setDealerName('');
+      setDealerGstNumber('');
+      setDealerType('regular');
+    } catch (error) {
+      console.error('Error submitting form', error);
+    }
   };
 
   return (
@@ -32,6 +58,12 @@ const GSTReturnPage = () => {
           className="intro-image"
         />
       </div>
+
+      {successMessage && (
+        <p className="success-message" style={{ color: 'red', fontWeight: 'bold', fontSize: '24px', animation: 'flash 1s infinite' }}>
+          {successMessage}
+        </p>
+      )} {/* Display success message */}
 
       <form onSubmit={handleSubmit} className="form">
         {/* GST Number and Business Name */}

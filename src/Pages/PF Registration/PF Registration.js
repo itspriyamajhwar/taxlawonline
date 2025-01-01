@@ -1,7 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
+import axios from 'axios'; // Import axios for making HTTP requests
 
 const PFRegistration = () => {
+  const [formData, setFormData] = useState({
+    organizationName: '',
+    employerName: '',
+    email: '',
+    phone: '',
+    numberOfEmployees: '',
+    message: ''
+  });
+  const [successMessage, setSuccessMessage] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3000/submit-pf-registration', formData);
+      console.log('Form Submitted', response.data);
+      setSuccessMessage('Form submitted successfully! Our team will contact you soon. Thank you!');
+      // Clear the form fields
+      setFormData({
+        organizationName: '',
+        employerName: '',
+        email: '',
+        phone: '',
+        numberOfEmployees: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form', error);
+    }
+  };
+
   return (
     <div className="pf-registration-page">
       <header className="page-header">
@@ -36,36 +72,39 @@ const PFRegistration = () => {
 
       <section className="registration-form-section">
         <h2>PF Registration Form</h2>
-        <form className="registration-form">
+        <form className="registration-form" onSubmit={handleSubmit}>
           <label>
             Organization Name:
-            <input type="text" placeholder="Enter your organization name" required />
+            <input type="text" name="organizationName" placeholder="Enter your organization name" value={formData.organizationName} onChange={handleChange} required />
           </label>
           <label>
             Employer Name:
-            <input type="text" placeholder="Enter employer name" required />
+            <input type="text" name="employerName" placeholder="Enter employer name" value={formData.employerName} onChange={handleChange} required />
           </label>
           <label>
             Email:
-            <input type="email" placeholder="Enter email address" required />
+            <input type="email" name="email" placeholder="Enter email address" value={formData.email} onChange={handleChange} required />
           </label>
           <label>
             Phone Number:
-            <input type="tel" placeholder="Enter phone number" required />
+            <input type="tel" name="phone" placeholder="Enter phone number" value={formData.phone} onChange={handleChange} required />
           </label>
           <label>
             Number of Employees:
-            <input type="number" placeholder="Enter the number of employees" required />
+            <input type="number" name="numberOfEmployees" placeholder="Enter the number of employees" value={formData.numberOfEmployees} onChange={handleChange} required />
           </label>
           <label>
             Message (Optional):
-            <textarea placeholder="Write any additional information"></textarea>
+            <textarea name="message" placeholder="Write any additional information" value={formData.message} onChange={handleChange}></textarea>
           </label>
           <button type="submit">Register</button>
         </form>
+        {successMessage && (
+          <p className="success-message" style={{ color: 'green', fontWeight: 'bold', fontSize: '24px', animation: 'flash 1s infinite' }}>
+            {successMessage}
+          </p>
+        )}
       </section>
-
-     
     </div>
   );
 };

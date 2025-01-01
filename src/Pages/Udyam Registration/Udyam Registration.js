@@ -1,7 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
+import axios from 'axios'; // Import axios for making HTTP requests
 
 const UdyamRegistration = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    aadhaar: '',
+    businessName: '',
+    businessType: ''
+  });
+  const [successMessage, setSuccessMessage] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3000/submit-udyam-registration', formData);
+      console.log('Form Submitted', response.data);
+      setSuccessMessage('Form submitted successfully! Our team will contact you soon. Thank you!');
+      // Clear the form fields
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        aadhaar: '',
+        businessName: '',
+        businessType: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form', error);
+    }
+  };
+
   return (
     <div className="udyam-registration-page">
       <header className="page-header">
@@ -68,30 +104,30 @@ const UdyamRegistration = () => {
 
       <section className="registration-form-section">
         <h2>Udyam Registration Form</h2>
-        <form className="registration-form">
+        <form className="registration-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+            <input type="text" id="name" name="name" placeholder="Enter your full name" value={formData.name} onChange={handleChange} required />
           </div>
           <div className="form-group">
             <label htmlFor="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+            <input type="email" id="email" name="email" placeholder="Enter your email" value={formData.email} onChange={handleChange} required />
           </div>
           <div className="form-group">
             <label htmlFor="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" value={formData.phone} onChange={handleChange} required />
           </div>
           <div className="form-group">
             <label htmlFor="aadhaar">Aadhaar Number</label>
-            <input type="text" id="aadhaar" name="aadhaar" placeholder="Enter your Aadhaar number" required />
+            <input type="text" id="aadhaar" name="aadhaar" placeholder="Enter your Aadhaar number" value={formData.aadhaar} onChange={handleChange} required />
           </div>
           <div className="form-group">
             <label htmlFor="businessName">Business Name</label>
-            <input type="text" id="businessName" name="businessName" placeholder="Enter your business name" required />
+            <input type="text" id="businessName" name="businessName" placeholder="Enter your business name" value={formData.businessName} onChange={handleChange} required />
           </div>
           <div className="form-group">
             <label htmlFor="businessType">Business Type</label>
-            <select id="businessType" name="businessType" required>
+            <select id="businessType" name="businessType" value={formData.businessType} onChange={handleChange} required>
               <option value="">Select your business type</option>
               <option value="manufacturing">Manufacturing</option>
               <option value="service">Service</option>
@@ -100,9 +136,12 @@ const UdyamRegistration = () => {
           </div>
           <button type="submit" className="submit-btn">Submit Registration</button>
         </form>
+        {successMessage && (
+          <p className="success-message" style={{ color: 'green', fontWeight: 'bold', fontSize: '24px', animation: 'flash 1s infinite' }}>
+            {successMessage}
+          </p>
+        )}
       </section>
-
-     
     </div>
   );
 };
