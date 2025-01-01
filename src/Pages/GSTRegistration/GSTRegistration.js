@@ -1,12 +1,47 @@
 import React, { useState } from "react";
 import "./style.css";
+import axios from 'axios'; // Import axios for making HTTP requests
 
 const GSTRegistration = () => {
   const [dealerType, setDealerType] = useState("regular"); // State to track dealer type selection
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [mobileNumber, setMobileNumber] = useState('');
+  const [businessName, setBusinessName] = useState('');
+  const [businessAddress, setBusinessAddress] = useState('');
+  const [additionalDetails, setAdditionalDetails] = useState('');
+  const [successMessage, setSuccessMessage] = useState(''); // State for success message
 
   // Handle radio button change for dealer type
   const handleDealerChange = (event) => {
     setDealerType(event.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3000/submit-gst-registration', {
+        fullName,
+        email,
+        mobileNumber,
+        businessName,
+        businessAddress,
+        dealerType,
+        additionalDetails
+      });
+      console.log('Form Submitted', response.data);
+      setSuccessMessage('Form submitted successfully! Our team will contact you soon. Thank you!');
+      // Clear the form fields
+      setFullName('');
+      setEmail('');
+      setMobileNumber('');
+      setBusinessName('');
+      setBusinessAddress('');
+      setDealerType('regular');
+      setAdditionalDetails('');
+    } catch (error) {
+      console.error('Error submitting form', error);
+    }
   };
 
   return (
@@ -69,12 +104,42 @@ const GSTRegistration = () => {
       {/* GST Dealer Selection Form */}
       <div className="gst-form">
         <h2>Apply for GST Registration</h2>
-        <form>
-          <input type="text" placeholder="Full Name" required />
-          <input type="email" placeholder="Email Address" required />
-          <input type="tel" placeholder="Mobile Number" required />
-          <input type="text" placeholder="Business Name" required />
-          <input type="text" placeholder="Business Address" required />
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Full Name"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email Address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="tel"
+            placeholder="Mobile Number"
+            value={mobileNumber}
+            onChange={(e) => setMobileNumber(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Business Name"
+            value={businessName}
+            onChange={(e) => setBusinessName(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Business Address"
+            value={businessAddress}
+            onChange={(e) => setBusinessAddress(e.target.value)}
+            required
+          />
           
           {/* Dealer Type Selection */}
           <div className="dealer-type-selection">
@@ -100,9 +165,18 @@ const GSTRegistration = () => {
             </label>
           </div>
 
-          <textarea placeholder="Additional Details (Optional)"></textarea>
+          <textarea
+            placeholder="Additional Details (Optional)"
+            value={additionalDetails}
+            onChange={(e) => setAdditionalDetails(e.target.value)}
+          ></textarea>
           <button type="submit">Submit</button>
         </form>
+        {successMessage && (
+          <p className="success-message" style={{ color: 'red', fontWeight: 'bold', fontSize: '24px', animation: 'flash 1s infinite' }}>
+            {successMessage}
+          </p>
+        )} {/* Display success message */}
       </div>
     </div>
   );

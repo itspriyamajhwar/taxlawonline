@@ -1,7 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
+import axios from 'axios'; // Import axios for making HTTP requests
 
 const TwelveAandEightyGRegistration = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [successMessage, setSuccessMessage] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3000/submit-12a-80g-registration', formData);
+      console.log('Form Submitted', response.data);
+      setSuccessMessage('Form submitted successfully! Our team will contact you soon. Thank you!');
+      // Clear the form fields
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error submitting form', error);
+    }
+  };
+
   return (
     <div className="registration-page">
       <header className="page-header">
@@ -50,27 +80,27 @@ const TwelveAandEightyGRegistration = () => {
 
       <section className="contact-form-section">
         <h2>Contact Us for Registration</h2>
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
           <label>
             Name:
-            <input type="text" placeholder="Enter your name" required />
+            <input type="text" name="name" placeholder="Enter your name" value={formData.name} onChange={handleChange} required />
           </label>
           <label>
             Email:
-            <input type="email" placeholder="Enter your email" required />
+            <input type="email" name="email" placeholder="Enter your email" value={formData.email} onChange={handleChange} required />
           </label>
           <label>
             Message:
-            <textarea
-              placeholder="Write your query here"
-              required
-            ></textarea>
+            <textarea name="message" placeholder="Write your query here" value={formData.message} onChange={handleChange} required></textarea>
           </label>
           <button type="submit">Submit</button>
         </form>
+        {successMessage && (
+          <p className="success-message" style={{ color: 'green', fontWeight: 'bold', fontSize: '24px', animation: 'flash 1s infinite' }}>
+            {successMessage}
+          </p>
+        )}
       </section>
-
-      
     </div>
   );
 };

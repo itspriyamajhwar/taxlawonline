@@ -1,7 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
+import axios from 'axios'; // Import axios for making HTTP requests
 
 const ProfessionalTaxRegistration = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState(''); // State for success message
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:3000/submit-professional-tax-registration', {
+        name,
+        email,
+        phone,
+        message
+      });
+      console.log('Form Submitted', response.data);
+      setSuccessMessage('Form submitted successfully! Our team will contact you soon. Thank you!');
+      // Clear the form fields
+      setName('');
+      setEmail('');
+      setPhone('');
+      setMessage('');
+    } catch (error) {
+      console.error('Error submitting form', error);
+    }
+  };
+
   return (
     <div className="professional-tax-page">
       {/* Slider Section */}
@@ -88,28 +116,55 @@ const ProfessionalTaxRegistration = () => {
       {/* Contact Form Section */}
       <section className="contact-form-section">
         <h2>Contact Us</h2>
-        <form className="contact-form">
+        <form className="contact-form" onSubmit={handleSubmit}>
           <label>
             Name:
-            <input type="text" placeholder="Enter your name" required />
+            <input
+              type="text"
+              placeholder="Enter your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
           </label>
           <label>
             Email:
-            <input type="email" placeholder="Enter your email" required />
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </label>
           <label>
             Phone:
-            <input type="tel" placeholder="Enter your phone number" required />
+            <input
+              type="tel"
+              placeholder="Enter your phone number"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              required
+            />
           </label>
           <label>
             Message:
-            <textarea placeholder="How can we help you?" rows="4" required></textarea>
+            <textarea
+              placeholder="How can we help you?"
+              rows="4"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+            ></textarea>
           </label>
           <button type="submit">Submit</button>
         </form>
+        {successMessage && (
+          <p className="success-message" style={{ color: 'red', fontWeight: 'bold', fontSize: '24px', animation: 'flash 1s infinite' }}>
+            {successMessage}
+          </p>
+        )} {/* Display success message */}
       </section>
-
-    
     </div>
   );
 };

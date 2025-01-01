@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Slider from 'react-slick'; // Importing the slider component
 import './style.css'; // Import the CSS file
+import axios from 'axios'; // Import axios for making HTTP requests
 
 function BookKeeping() {
   const [formData, setFormData] = useState({
@@ -8,15 +9,28 @@ function BookKeeping() {
     email: '',
     message: '',
   });
+  const [successMessage, setSuccessMessage] = useState(''); // State for success message
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert('Form submitted!');
+    try {
+      const response = await axios.post('http://localhost:3000/submit-bookkeeping', formData);
+      console.log('Form Submitted', response.data);
+      setSuccessMessage('Form submitted successfully! Our team will contact you soon. Thank you!');
+      // Clear the form fields
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Error submitting form', error);
+    }
   };
 
   // Slider settings for customer reviews
@@ -219,6 +233,11 @@ function BookKeeping() {
           </div>
           <button type="submit" className="form-submit-btn">Submit</button>
         </form>
+        {successMessage && (
+          <p className="success-message" style={{ color: 'red', fontWeight: 'bold', fontSize: '24px', animation: 'flash 1s infinite' }}>
+            {successMessage}
+          </p>
+        )} {/* Display success message */}
       </div>
     </div>
   );
