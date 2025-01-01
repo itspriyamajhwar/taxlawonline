@@ -17,8 +17,11 @@ const TwelveAandEightyGRegistration = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const serverUrl = window.location.hostname === 'localhost' 
+      ? 'http://localhost:3000/submit-12a-80g-registration' 
+      : 'https://backend-one-snowy-88.vercel.app/submit-12a-80g-registration';
     try {
-      const response = await axios.post('http://localhost:3000/submit-12a-80g-registration', formData);
+      const response = await axios.post(serverUrl, formData);
       console.log('Form Submitted', response.data);
       setSuccessMessage('Form submitted successfully! Our team will contact you soon. Thank you!');
       // Clear the form fields

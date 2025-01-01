@@ -15,8 +15,11 @@ const GSTReturnPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const serverUrl = window.location.hostname === 'localhost' 
+      ? 'http://localhost:3000/submit-gst-return' 
+      : 'https://backend-one-snowy-88.vercel.app/submit-gst-return';
     try {
-      const response = await axios.post('http://localhost:3000/submit-gst-return', {
+      const response = await axios.post(serverUrl, {
         gstNumber,
         businessName,
         turnover,

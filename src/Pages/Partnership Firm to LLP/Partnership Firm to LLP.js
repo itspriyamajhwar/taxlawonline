@@ -12,8 +12,11 @@ const PartnershipFirmToLLP = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const serverUrl = window.location.hostname === 'localhost' 
+      ? 'http://localhost:3000/submit-partnership-to-llp' 
+      : 'https://backend-one-snowy-88.vercel.app/submit-partnership-to-llp';
     try {
-      const response = await axios.post('http://localhost:3000/submit-partnership-to-llp', {
+      const response = await axios.post(serverUrl, {
         name,
         email,
         phone,

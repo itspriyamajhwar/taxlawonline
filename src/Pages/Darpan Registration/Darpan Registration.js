@@ -18,8 +18,11 @@ const DarpanRegistration = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const serverUrl = window.location.hostname === 'localhost' 
+      ? 'http://localhost:3000/submit-darpan-registration' 
+      : 'https://backend-one-snowy-88.vercel.app/submit-darpan-registration';
     try {
-      const response = await axios.post('http://localhost:3000/submit-darpan-registration', formData);
+      const response = await axios.post(serverUrl, formData);
       console.log('Form Submitted', response.data);
       setSuccessMessage('Form submitted successfully! Our team will contact you soon. Thank you!');
       // Clear the form fields
